@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="cube.css">
+		<link rel="stylesheet" type="text/css" href="base.css">
+		<title>魔方</title>
+	</head>
+	<body>
+    <div class="button">
+			<input type="button" value="打乱魔方" id="shuffle" onClick="cube.shuffle()"/>
+			<input type="button" value="撤销" id="undo" onClick="cube.undo()"/>
+			<input type="button" value="重做" id="redo" onClick="cube.redo()"/>
+			<input type="button" value="看底面" id="turnX" 
+				onmousedown="cube.rotation.x=-Math.PI*0.15", onmouseup="cube.rotation.x=Math.PI*0.15",
+				ontouchstart="cube.rotation.x=-Math.PI*0.15", ontouchend="cube.rotation.x=Math.PI*0.15"
+			/>
+			<table>
+				<tr><th>公式名</th><th>命令串</th></tr>
+				<tr><td>底层角右</td><td>rdR</td><td><input type="button" value="运行" onClick="cube.twist('rdR'.split(''))"></td></tr>
+				<tr><td>底层角左</td><td>FDf</td><td><input type="button" value="运行" onClick="cube.twist('FDf'.split(''))"></td></tr>
+				<tr><td>中层还原右</td><td>ufUFURur</td><td><input type="button" value="运行" onClick="cube.twist('ufUFURur'.split(''))"></td></tr>
+				<tr><td>中层还原左</td><td>URurufUF</td><td><input type="button" value="运行" onClick="cube.twist('URurufUF'.split(''))"></td></tr>
+				<tr><td>顶面十字</td><td>rufUFR</td><td><input type="button" value="运行" onClick="cube.twist('rufUFR'.split(''))"></td></tr>
+				<tr><td>小鱼右</td><td>ruRuruuR</td><td><input type="button" value="运行" onClick="cube.twist('ruRuruuR'.split(''))"></td></tr>
+				<tr><td>小鱼左</td><td>FUfUFUUf</td><td><input type="button" value="运行" onClick="cube.twist('FUfUFUUf'.split(''))"></td></tr>
+				<tr><td>顶面四角</td><td>LfLBBlFLBBLL</td><td><input type="button" value="运行" onClick="cube.twist('LfLBBlFLBBLL'.split(''))"></td></tr>
+			</table>
+		</div>
+		<div id="container" ></div>
+		<div id="fail">
+			<h1>Sorry,</h1>
+			<h2>Cubers broken</h2>
+		</div>
+		<script charset="utf-8" src="cuber.js"></script>
+		<script charset="utf-8" src="jquery.js"></script>
+		<script charset="utf-8" src="main.js"></script>
+	</body>
+</html>
